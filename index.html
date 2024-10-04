@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Style for the overall page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the form */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for the heading, with color added */
+        h2 {
+            text-align: center;
+            color: #FFFFFF; /* White text for contrast */
+            background: linear-gradient(to right, #A020F0, #FF69B4); /* Purple to Pink gradient */
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+        }
+
+        /* General form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Label styles */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        /* Input, select, and textarea styles */
+        input[type="text"], 
+        input[type="email"], 
+        input[type="number"], 
+        input[type="date"], 
+        select, 
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Row layout for input fields */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Responsive input field adjustment */
+        .row > div {
+            flex: 1 1 calc(50% - 10px);
+        }
+
+        /* Style for the textarea */
+        textarea {
+            resize: vertical;
+        }
+
+        /* Gender dropdown specific style */
+        .gender-options {
+            width: 100%;
+        }
+
+        /* Submit button styles */
+        .submit-btn {
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: linear-gradient(to right, #A020F0, #FF69B4); /* Main button color */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Submit button hover effect */
+        button:hover {
+            background: linear-gradient(to right, #FF69B4, #A020F0); /* Reverse gradient on hover */
+        }
+
+        /* Responsive layout for smaller screens */
+        @media (max-width: 768px) {
+            .row > div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container for the form -->
+    <div class="container">
+        <!-- Form heading -->
+        <h2>Registration Form</h2>
+
+        <!-- Registration form -->
+        <form id="registrationForm" onsubmit="return validateForm()" action="submit.php" method="post">
+            
+            <!-- Row for First and Last Name -->
+            <div class="row">
+                <div>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="firstName" required>
+                </div>
+                <div>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="lastName" required>
+                </div>
+            </div>
+
+            <!-- Row for Nickname and Gender -->
+            <div class="row">
+                <div>
+                    <label for="nicName">Nickname:</label>
+                    <input type="text" name="nicName" id="nicName" required>
+                </div>
+                <div>
+                    <label for="gender">Gender:</label>
+                    <select name="gender" id="gender" class="gender-options" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row for Graduation Course Name and Passing Year -->
+            <div class="row">
+                <div>
+                    <label for="courseName">Graduation Course Name:</label>
+                    <input type="text" name="courseName" id="courseName" required>
+                </div>
+                <div>
+                    <label for="passingYear">Passing Year:</label>
+                    <input type="number" name="passingYear" id="passingYear" min="1900" max="2024" required>
+                </div>
+            </div>
+
+            <!-- Textarea for Address -->
+            <div>
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" rows="3" required></textarea>
+            </div>
+
+            <!-- Input for Date of Birth -->
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+
+            <!-- Input for Email Address -->
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <!-- Input for Phone Number -->
+            <div>
+                <label for="phone">Phone/WhatsApp Number:</label>
+                <input type="text" name="phone" id="phone" required>
+            </div>
+
+            <!-- Submit button -->
+            <div class="submit-btn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Form validation script -->
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const email = document.getElementById("email").value;
+
+            if (!firstName || !lastName || !email) {
+                alert("Please fill out all required fields.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
