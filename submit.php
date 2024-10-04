@@ -2,16 +2,16 @@
 // Check if the form has been submitted using the POST method
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the form data from the POST request
-    $firstName = htmlspecialchars(trim($_POST['firstName']));
-    $lastName = htmlspecialchars(trim($_POST['lastName']));
-    $nicName = htmlspecialchars(trim($_POST['nicName']));
-    $gender = htmlspecialchars(trim($_POST['gender']));
-    $courseName = htmlspecialchars(trim($_POST['courseName']));
-    $passingYear = htmlspecialchars(trim($_POST['passingYear']));
-    $address = htmlspecialchars(trim($_POST['address']));
-    $dob = htmlspecialchars(trim($_POST['dob']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $phone = htmlspecialchars(trim($_POST['phone']));
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $nicName = $_POST['nicName'];
+    $gender = $_POST['gender'];
+    $courseName = $_POST['courseName'];
+    $passingYear = $_POST['passingYear'];
+    $address = $_POST['address'];
+    $dob = $_POST['dob'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
 
     // Specify the recipient email address
     $to = "browsing.amin@gmail.com";
@@ -30,11 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Address: $address\n
     Date of Birth: $dob\n
     Email: $email\n
-    Phone/WhatsApp: $phone
+    Phone/WHATSAPP: $phone
     ";
 
     // Set the email headers, including the sender's email
-    $headers = "From: $email\r\n";
+    $headers = "From: $email";
 
     // Attempt to send the email and check if it was successful
     if (mail($to, $subject, $message, $headers)) {
