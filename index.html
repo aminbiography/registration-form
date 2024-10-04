@@ -122,7 +122,7 @@
         <h2>Registration Form</h2>
 
         <!-- Registration form -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form action="https://formspree.io/f/0123456789" method="POST">
         <!-- <form id="registrationForm" onsubmit="return validateForm()" action="submit.php" method="post"> -->
             
             <!-- Row for First and Last Name -->
@@ -209,6 +209,18 @@
             }
             return true;
         }
+
+    // Form Id
+
+    const formId = "0123456789"; 
+
+    fetch(`https://api.example.com/forms/${formId}/submit`, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "Content-Type": "application/json"
+    }
+});
     </script>
 </body>
 </html>
