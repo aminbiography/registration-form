@@ -99,4 +99,4 @@ User Feedback:
 Redirect users to a "Thank You" page after successful registration instead of displaying a message on the same page.
 Email Confirmation:
 
-Implement an email confirmation feature where users receive a confirmation email after registration.
+Implement an email confirmation feature where users receive a confirmation email after registration.                
