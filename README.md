@@ -3,7 +3,6 @@ Live URL:
 https://aminbiography.github.io/registration-form/
 
 
-
 ```
 Instructions for Handling the Registration Form and PHP Backend
 1. Overview
