@@ -1,7 +1,7 @@
 Live URL:
 
 https://aminbiography.github.io/registration-form/
- 
+  
 ------------------------------------------------------
 
 Here’s a developer-friendly guide you can drop into a `README.md` (or your team wiki). It’s opinionated, pragmatic, and includes production notes, security must-dos, and test recipes.
